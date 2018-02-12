@@ -1,5 +1,3 @@
-# GA-w10d01-python
-
 ![General Assembly Logo](https://git.generalassemb.ly/avatars/u/5924?s=200)
 
 # Learning Python
@@ -39,24 +37,47 @@ Your first task is to research Python to be able to understand some of its basic
 
 ##### What paradigms does Python support?
 
+Python supports different programming paradigm, as given below: Credit ([Quora](https://www.quora.com/What-programming-paradigms-does-python-allow))
+
+1. Object Oriented: Python allows the programmer to create classes and objects.
+
+1. Procedure Oriented: Python groups code into functions. Tasks get executed step-by-step.
+Functional: Python disallows side effects. Every statement is treated as a mathematical equation. Parallel processing is possible. Lambda functions or Recursion is used by many developers.
+
+1. Imperative: Computation is performed as a direct change to program state. Used for data manipulation of data structure.
+
 ##### What typing discipline does it follow?
+
+It follows dynamic type. ([link](https://pawelmhm.github.io/python/static/typing/type/annotations/2016/01/23/typing-python3.html))
 
 ##### Is it a high or low level language?
 
+Python is a high-level language, as it is designed to be human-readable and requires interpreter for the machine to understand and execute. 
+
 ##### Does it have built in memory management and garbage collection?
+
+Memory management in Python involves a private heap containing all Python objects and data structures. The management of this private heap is ensured internally by the Python memory manager. The Python memory manager has different components which deal with various dynamic storage management aspects, like sharing, segmentation, preallocation or caching. ([link](https://docs.python.org/2/c-api/memory.html))
 
 ##### What languages was Python influenced by?
 
+ABC language ([Wikipedia](https://en.wikipedia.org/wiki/ABC_(programming_language)))
+
 ##### Is it a compiled or interpeted language?
+
+It is interpreted.
 
 ##### Does it have strong support for functional programming?
 
+No
+
 ##### What's the deal with Python 2 vs Python 3?
+Short version: Python 2.x is legacy, Python 3.x is the present and future of the language. ([link](https://wiki.python.org/moin/Python2orPython3))
 
 ##### How do you open a REPL for Python?
+Use python interpreter such as IDLE3
 
 ##### How does one execute a Python program?
-
+`python3 <your_script_file.py>`
 
 ## Read: The Zen of Python
 
