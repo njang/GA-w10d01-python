@@ -24,7 +24,7 @@ def quiz():    # Function defnition. Initially display the welcome message and d
       if (userInput == correct+1):    # If the user guesses correctly 
         print('You chose wisely.')    # Notify the user's wise choice
       else:                           # Otherwise notify the user's poor choice
-        print('You chose poorly. You guessed',choices[userInput-1],'. The correct answer is',choices[correct])
+        print('You chose poorly. The correct answer is',choices[correct],'.')
         wrong.append(states[x])       # And log the incorrect attempts
     print('Your score is ',len(states)-len(wrong),'/',len(states))  # Display the user's score
     playMore = input('Would you like to play more? (yes/no)')       # Ask the user's intent to play more
