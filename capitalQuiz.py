@@ -11,22 +11,20 @@ def quiz():    # Function defnition. Initially display the welcome message and d
     states = list(state_capitals.keys())      # Store state names from the dicitonary
     random.shuffle(states)                    # Shuffle the order of states in the list for each round
     for x in range(0,len(states)):            # Loop through all 50 US states
-      question = str(x+1)+') capital of '+states[x]+' is '      # Concatenate question string
+      question = f'Q{x+1}. Capital of {states[x]} is '      # Concatenate question string
       choices = random.sample([state for state in states if state != states[x]],4)  # Sample 4 random states (excluding the state for which capital is being guessed in this round) whose capitals will be answer choices
-      for y in range(0,4):                                      # Loop through 4 selected states
-        choices[y] = state_capitals[choices[y]]                 # Replace the state name with capital name
-      correct = random.randint(0,3)                             # Randomly select an index to be the correct answer
-      choices[correct] = state_capitals[states[x]]              # Overwrite the choice of the index with correct answer
-      for y in range(0,4):                                      # Loop through 4 answer choices
-        question += '(' + str(y + 1) + ')' + choices[y] + ' '   # Concatenate the answer strings
-      question += ':'                         # Format the answer strings
+      for y in range(0,4):                                                  # Loop through 4 selected states
+        choices[y] = f'({ y + 1 }) { state_capitals[choices[y]] }'          # Replace the state name with capital name
+      correct = random.randint(0,3)                                         # Randomly select an index to be the correct answer
+      choices[correct] = f'({ correct + 1 }) { state_capitals[states[x]] }' # Overwrite the choice of the index with correct answer
+      question += ', '.join(choices) + ': '                                 # Concatenate and format answer strings
       userInput = int(input(question))        # Ask the question in multiple choice form
       if (userInput == correct+1):    # If the user guesses correctly 
         print('You chose wisely.')    # Notify the user's wise choice
       else:                           # Otherwise notify the user's poor choice
         print('You chose poorly. The correct answer is',choices[correct],'.')
         wrong.append(states[x])       # And log the incorrect attempts
-    print('Your score is ',len(states)-len(wrong),'/',len(states))  # Display the user's score
+    print(f'Your score is {len(states) - len(wrong)}/{len(states)}')  # Display the user's score
     playMore = input('Would you like to play more? (yes/no)')       # Ask the user's intent to play more
 
 quiz()
